@@ -21,7 +21,7 @@
   • Arduino IDE 2.x or 1.8.x
   • M5Stack ESP32 board support:
     - File → Preferences → Additional Board Manager URLs:
-      https://m5stack.oss-cn-shenzhen.aliyuncdn.com/resource/arduino/package_m5stack_index.json
+     (https://docs.m5stack.com/en/arduino/arduino_library)
     - Tools → Board → Boards Manager → search "M5Stack" → install
       "M5Stack Boards" (or "M5Stack ESP32")
   • M5Cardputer / M5Unified library:
@@ -202,4 +202,3 @@ QUICK REFERENCE
 
   Menu: 1 = Select .bin, 2 = Flash, 3 = Reset C5, ESC = Back
 
-================================================================================
