@@ -191,22 +191,22 @@ QUICK REFERENCE
 --------------------------------------------------------------------------------
 
   Pinout (Cardputer → C5)
-    TX 13 → C5 RX
-    RX 15 ← C5 TX
-    G3    → C5 GPIO28 (BOOT)
-    G4    → C5 RESET
-    G5    → C5 GPIO27
-    GND   → GND
+   - TX 13 → C5 RX
+   - RX 15 ← C5 TX
+   - G3    → C5 GPIO28 (BOOT)
+   - G4    → C5 RESET
+   - G5    → C5 GPIO27
+   - GND   → GND
 
   Flash offset: 0x10000
 
   Menu: 1 = Select .bin, 2 = Flash, 3 = Reset C5, ESC = Back
 
   Schematic Color Code:
-    Green   → GND 
-    Red     → 5VO 
-    Black   → G3  → GPIO 28
-    Blue    → G4  → Reset
-    Yellow  → G13 → RX (ESP)
-    Orange  → G15 → TX (ESP)
-    Pink    → G5  → GPIO 27
+  - Green   → GND
+  - Red     → 5VO
+  - Black   → G3  → GPIO 28
+  - Blue    → G4  → Reset
+  - Yellow  → G13 → RX (ESP)
+  - Orange  → G15 → TX (ESP)
+  - Pink    → G5  → GPIO 27
