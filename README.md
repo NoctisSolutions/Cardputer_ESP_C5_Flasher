@@ -9,7 +9,7 @@
 --------------------------------------------------------------------------------
 
   1. Hardware
-  --------
+
   • M5Stack Cardputer (or Cardputer ADV)
   • ESP32-C5-DevKitC-N8R8 (or compatible C5) to be flashed
   • Jumper wires (Cardputer GND, 3.3V, G3, G4, G5, TX, RX)
@@ -17,7 +17,7 @@
   • USB cable for Cardputer (power and upload)
 
   2. Software
-  --------
+
   • Arduino IDE 2.x or 1.8.x
   • M5Stack ESP32 board support:
     - File → Preferences → Additional Board Manager URLs:
@@ -37,15 +37,15 @@ ESP SERIAL FLASHER LIBRARY
   The library must be in your Arduino "libraries" folder.
 
   1. Location
-  -------
+
   Put the library here:
 
     Windows:   Documents\Arduino\libraries\EspSerialFlasher\
     macOS:     ~/Documents/Arduino/libraries/EspSerialFlasher/
     Linux:     ~/Arduino/libraries/EspSerialFlasher/
 
-  Required contents (minimum)
-  ---------------------------
+  2. Required contents (minimum)
+
   • EspSerialFlasher\esp_loader.h          (redirect to src)
   • EspSerialFlasher\EspSerialFlasher.h   (redirect to src)
   • EspSerialFlasher\library.properties
@@ -60,8 +60,8 @@ ESP SERIAL FLASHER LIBRARY
       protocol_sdio.c and esp_sdio_stubs.c should be renamed to
       .c.disabled so only UART is built)
 
-  2. Verify in Arduino IDE
-  ---------------------
+  3. Verify in Arduino IDE
+
   • Sketch → Include Library → you should see "EspSerialFlasher".
   • If not, check Sketchbook location (File → Preferences) and that
     the folder name is exactly "EspSerialFlasher" under "libraries".
@@ -83,8 +83,8 @@ WIRING (Cardputer ↔ ESP32-C5-DevKitC-N8R8)
   GND                  →    GND
   5V Out               →    5V or LDO (per devkit schematic)
 
-  Important
-  ---------
+  - Important
+
   • TX must go to C5 RX, RX to C5 TX (crossed). Same-wire (TX–TX, RX–RX)
     will cause "Connect failed" or timeout.
   • GPIO27 on the C5 must be driven high for download; wiring G5 to
@@ -133,7 +133,7 @@ PREPARE THE SD CARD
   • Insert the SD card into the Cardputer’s slot.
 
   - Flash offset
-  -----------
+ 
   The flasher writes the selected .bin at address 0x10000. Build your
   firmware so the app partition starts at 0x10000 if required by your
   partition table.
@@ -151,8 +151,8 @@ USING THE FLASHER (ON CARDPUTER)
     3. Reset ESP32
     Selected: (filename or None)
 
-  Keys
-  ----
+- Keys
+
   • 1 – Select Firmware: list .bin files on SD; choose one with Up/Down
           (; = up, . = down), confirm with Enter.
   • 2 – Flash Firmware: connect to the C5, flash the selected file,
