@@ -202,3 +202,11 @@ QUICK REFERENCE
 
   Menu: 1 = Select .bin, 2 = Flash, 3 = Reset C5, ESC = Back
 
+  Schematic Color Code:
+    Green   → GND 
+    Red     → 5VO 
+    Black   → G3  → GPIO 28
+    Blue    → G4  → Reset
+    Yellow  → G13 → RX (ESP)
+    Orange  → G15 → TX (ESP)
+    Pink    → G5  → GPIO 27
