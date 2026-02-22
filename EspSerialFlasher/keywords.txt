@@ -1,0 +1,6 @@
+EspSerialFlasher	KEYWORD1
+begin	KEYWORD2
+connect	KEYWORD2
+esp_loader_connect	KEYWORD2
+esp_loader_flash_binary	KEYWORD2
+// Add more from esp_loader.h, e.g., ESP_LOADER_SUCCESS	LITERAL1
