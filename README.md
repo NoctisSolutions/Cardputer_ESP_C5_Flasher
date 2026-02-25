@@ -11,20 +11,28 @@
   1. Hardware
 
   • M5Stack Cardputer (or Cardputer ADV)
+  
   • ESP32-C5-DevKitC-N8R8 (or compatible C5) to be flashed
+  
   • Jumper wires (Cardputer GND, 3.3V, G3, G4, G5, TX, RX)
+  
   • MicroSD card (for .bin files and optional debug log)
+  
   • USB cable for Cardputer (power and upload)
 
   2. Software
 
   • Arduino IDE 2.x or 1.8.x
+  
   • M5Stack ESP32 board support:
+  
     - File → Preferences → Additional Board Manager URLs:
      (https://docs.m5stack.com/en/arduino/arduino_library)
     - Tools → Board → Boards Manager → search "M5Stack" → install
       "M5Stack Boards" (or "M5Stack ESP32")
+      
   • M5Cardputer / M5Unified library:
+  
     - Sketch → Include Library → Manage Libraries → search "M5Cardputer"
       or "M5Unified" → install
 
@@ -47,9 +55,13 @@ ESP SERIAL FLASHER LIBRARY
   2. Required contents (minimum)
 
   • EspSerialFlasher\esp_loader.h          (redirect to src)
+  
   • EspSerialFlasher\EspSerialFlasher.h   (redirect to src)
+  
   • EspSerialFlasher\library.properties
+  
   • EspSerialFlasher\src\
+  
     - EspSerialFlasher.h, EspSerialFlasher.cpp
     - arduino_port.cpp, esp_loader_config.h
     - esp_loader.h, esp_loader_io.h, esp_loader.c
@@ -63,6 +75,7 @@ ESP SERIAL FLASHER LIBRARY
   3. Verify in Arduino IDE
 
   • Sketch → Include Library → you should see "EspSerialFlasher".
+  
   • If not, check Sketchbook location (File → Preferences) and that
     the folder name is exactly "EspSerialFlasher" under "libraries".
 
@@ -87,6 +100,7 @@ WIRING (Cardputer ↔ ESP32-C5-DevKitC-N8R8)
 
   • TX must go to C5 RX, RX to C5 TX (crossed). Same-wire (TX–TX, RX–RX)
     will cause "Connect failed" or timeout.
+    
   • GPIO27 on the C5 must be driven high for download; wiring G5 to
     EXT pin 1 (or the C5’s GPIO27) does that. If GPIO27 is floating or low,
     the ROM may not enter download mode.
@@ -97,13 +111,16 @@ OPEN THE SKETCH AND SELECT BOARD
 --------------------------------------------------------------------------------
 
   • File → Open → open the folder:
+  
       ...\Arduino\CardputerESPFlasherLib\
     (Open the folder "CardputerESPFlasherLib", not the parent Arduino folder.)
 
   • In the IDE you should see:
+  
       CardputerESPFlasherLib.ino
 
   • Set board and port:
+  
       Tools → Board → M5Stack Cardputer (or your exact Cardputer board name)
       Tools → Port → (the COM port for the Cardputer)
 
@@ -113,9 +130,11 @@ BUILD AND UPLOAD
 --------------------------------------------------------------------------------
 
   • Sketch → Verify/Compile
+  
   • Sketch → Upload
 
   If compile fails with "EspSerialFlasher.h: No such file or directory":
+  
     - Confirm the EspSerialFlasher library is in Arduino/libraries/EspSerialFlasher.
     - Restart the Arduino IDE and try again.
 
@@ -128,11 +147,13 @@ PREPARE THE SD CARD
 --------------------------------------------------------------------------------
 
   • Format the SD card (FAT32).
+  
   • Copy your .bin firmware file(s) to the root of the SD card (not in a
     subfolder if you want them listed in the flasher menu).
+    
   • Insert the SD card into the Cardputer’s slot.
 
-  - Flash offset
+  • Flash offset
  
   The flasher writes the selected .bin at address 0x10000. Build your
   firmware so the app partition starts at 0x10000 if required by your
@@ -155,11 +176,14 @@ USING THE FLASHER (ON CARDPUTER)
 
   • 1 – Select Firmware: list .bin files on SD; choose one with Up/Down
           (; = up, . = down), confirm with Enter.
+  
   • 2 – Flash Firmware: connect to the C5, flash the selected file,
           then reset the C5 so the new code runs. Press ESC during flash
           to abort.
+  
   • 3 – Reset ESP32: pulse the C5’s RESET pin (run firmware without
           reflashing).
+  
   • ESC – Back (e.g. from file list to main menu).
 
   Flow for a typical flash
